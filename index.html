@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/ico.png">
+    <title>Sukritham Properties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .body-her {
+            background-image: url('assets/hm-pg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="body-her">
+        <nav class="fixed w-full z-30 bg-gray-600 bg-opacity-40 backdrop-blur-md shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-20">
+                    <div class="flex">
+                        <a href="/">
+                            <div class="flex-shrink-0 flex items-center">
+                                <img class="h-16 mt-2 w-auto" src="assets/logo.png" alt="Company Logo">
+                            </div>
+                        </a>
+                        <div class="hidden md:ml-6 md:flex md:space-x-8">
+                            <a href="/" class="text-slate-900 inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium">Home</a>
+                            <a href="/projects.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Projects</a>
+                            <a href="/about.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">About</a>
+                            <a href="/contact.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:ml-6 space-x-3 md:flex md:items-center">
+                        <a href="https://www.facebook.com/sukritham.properties" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                        <a href="mailto:sukrithamproperties@gmail.com" target="_blank"><img src="assets/email-icon.png" alt="Email" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                        <a href="https://www.google.com/maps/place/8°47'36.4&quot;N+76°45'42.9&quot;E/@8.7934542,76.7597208,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d8.7934542!4d76.7619095?hl=en" target="_blank">
+                            <img src="assets/maps-icon.png" alt="Maps" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                        <a href="https://api.whatsapp.com/send?phone=919633661344" target="_blank"><img src="assets/whatsapp-icon.png" alt="WhatsApp" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    </div>
+                    <div class="flex items-center md:hidden">
+                        <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar for small displays -->
+        <div id="sidebar" class="hidden fixed inset-0 flex z-40 md:hidden">
+
+            <div class="relative flex-1 flex flex-col max-w-full w-full bg-gray-800">
+                <div class="absolute top-7 right-9 pt-2">
+                    <button id="close-button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:bg-gray-700">
+                        <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mx-auto pt-20">
+                    <nav class="mt-5 px-2">
+                        <a href="/" class="group flex items-center my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                            Home
+                        </a>
+                        <a href="/projects.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                            Projects
+                        </a>
+                        <a href="/about.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                            About
+                        </a>
+                        <a href="/contact.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                            Contact
+                        </a>
+                    </nav>
+                </div>
+                <div class="space-x-7 m-auto flex mt-20">
+                    <a href="https://www.facebook.com/sukritham.properties" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="mailto:sukrithamproperties@gmail.com" target="_blank"><img src="assets/email-icon.png" alt="Email" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="https://www.google.com/maps/place/8°47'36.4&quot;N+76°45'42.9&quot;E/@8.7934542,76.7597208,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d8.7934542!4d76.7619095?hl=en" target="_blank">
+                        <img src="assets/maps-icon.png" alt="Maps" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="https://api.whatsapp.com/send?phone=919633661344" target="_blank"><img src="assets/whatsapp-icon.png" alt="WhatsApp" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <header>
+            <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-1 lg:flex lg:items-center lg:justify-between">
+                <div class="lg:w-[35%] p-10 mt-10 md:mt-20 lg:mt-8 backdrop-blur-lg bg-gray-600 rounded-xl bg-opacity-40">
+                    <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl">
+                        <span class="block">Building Your Dreams</span>
+                    </h1>
+                    <div class="mt-8 text-lg font-semibold leading-6 text-gray-900">
+                        <ul class="list-disc list-inside space-y-2">
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-slate-900 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Architectural Design and Estimation
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-slate-900 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Residential Building Construction
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-slate-900 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Commercial Building Construction
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-slate-900 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Interior Design and Furnishing
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-slate-900 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Exterior Design and Landscaping
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-slate-900 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Building Renovation Works
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 flex">
+                        <div class="inline-flex rounded-md shadow">
+                            <a href="/projects.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-slate-900 bg-green-500 hover:bg-green-700">
+                                Our Projects
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Portfolio Section -->
+    <section class="bg-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900">Our Work</h2>
+            <div class="mt-6 grid grid-cols-1 gap-y-12 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+                <div class="group relative">
+                    <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                        <img src="assets/projects/res/ongoing/1/main.JPG" alt="Project 1" class="w-full h-full object-center object-cover">
+                    </div>
+                    <h3 class="mt-4 text-lg font-medium text-gray-900">SP001</h3>
+                    <p class="mt-1 text-sm text-gray-500">An Ongoing Residential Project</p>
+                </div>
+                <div class="group relative">
+                    <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                        <img src="assets/projects/res/completed/1/main2.jpg" alt="Project 2" class="w-full h-full object-center object-cover">
+                    </div>
+                    <h3 class="mt-4 text-lg font-medium text-gray-900">Renovation SP002</h3>
+                    <p class="mt-1 text-sm text-gray-500">Second Renovation Project</p>
+                </div>
+                <div class="group relative">
+                    <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                        <img src="assets/projects/res/completed/3/main.jpg" alt="Project 3" class="w-full h-full object-center object-cover">
+                    </div>
+                    <h3 class="mt-4 text-lg font-medium text-gray-900">Low Cost SP003</h3>
+                    <p class="mt-1 text-sm text-gray-500">A low cost residential project</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900">Get in Touch</h2>
+            <p class="mt-4 text-lg leading-6 text-gray-500">Ready to start your next project? Contact us today!</p>
+            <div class="mt-8 flex">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="/contact.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 pb-3">
+        <div class="max-w-7xl mx-auto mt-3 px-4 sm:px-6 lg:px-1">
+            <div class="flex justify-between items-center">
+                <div class="text-gray-400">
+                    <p class="font-bold text-lg text-gray-200">SUKRITHAM PROPERTIES</p>
+                    <p class="font-semibold text-gray-300">DEVELOPERS & BUILDERS</p>
+                    <p>Kattadimukku, Chavarcode, Parippally</p>
+                    <p>EMAIL: sukrithamproperties@gmail.com</p>
+                    <p>PHONE: 9633661344</p>
+                </div>
+            </div>
+            <div class="mt-8">
+                <p class="text-center text-gray-400">&copy; 2024 Sukritham Properties. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+<script>
+    window.addEventListener('load', ()=> {
+        console.log('hi');
+        document.getElementById('menu-button').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.remove('hidden');
+    });
+    document.getElementById('close-button').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.add('hidden');
+    });
+    })
+    
+</script>
+</html>
+

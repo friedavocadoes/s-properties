@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/ico.png">
+    <title>About Us - Sukritham Properties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .body-her {
+            background-image: url('assets/hm-pg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="body-her">
+        <nav class="fixed w-full z-30 bg-gray-600 bg-opacity-40 backdrop-blur-md shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-20">
+                    <div class="flex">
+                        <a href="/">
+                            <div class="flex-shrink-0 flex items-center">
+                                <img class="h-16 mt-2 w-auto" src="assets/logo.png" alt="Company Logo">
+                            </div>
+                        </a>
+                        <div class="hidden md:ml-6 md:flex md:space-x-8">
+                            <a href="/" class="text-slate-900 inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium">Home</a>
+                            <a href="/projects.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Projects</a>
+                            <a href="/about.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">About</a>
+                            <a href="/contact.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:ml-6 space-x-3 md:flex md:items-center">
+                        <a href="https://www.facebook.com/sukritham.properties" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                        <a href="mailto:sukrithamproperties@gmail.com" target="_blank"><img src="assets/email-icon.png" alt="Email" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                        <a href="https://www.google.com/maps/place/8°47'36.4&quot;N+76°45'42.9&quot;E/@8.7934542,76.7597208,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d8.7934542!4d76.7619095?hl=en" target="_blank">
+                            <img src="assets/maps-icon.png" alt="Maps" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                        <a href="https://api.whatsapp.com/send?phone=919633661344" target="_blank"><img src="assets/whatsapp-icon.png" alt="WhatsApp" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    </div>
+                    <div class="flex items-center md:hidden">
+                        <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar for small displays -->
+        <div id="sidebar" class="hidden fixed inset-0 flex z-40 md:hidden">
+            <div class="relative flex-1 flex flex-col max-w-full w-full bg-gray-800">
+                <div class="absolute top-7 right-9 pt-2">
+                    <button id="close-button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:bg-gray-700">
+                        <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mx-auto pt-20">
+                    <nav class="mt-5 px-2">
+                        <a href="/" class="group flex items-center my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                            Home
+                        </a>
+                        <a href="/projects.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                            Projects
+                        </a>
+                        <a href="/about.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                            About
+                        </a>
+                        <a href="/contact.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                            Contact
+                        </a>
+                    </nav>
+                </div>
+                <div class="space-x-7 m-auto flex mt-20">
+                    <a href="https://www.facebook.com/sukritham.properties" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="mailto:sukrithamproperties@gmail.com" target="_blank"><img src="assets/email-icon.png" alt="Email" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="https://www.google.com/maps/place/8°47'36.4&quot;N+76°45'42.9&quot;E/@8.7934542,76.7597208,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d8.7934542!4d76.7619095?hl=en" target="_blank">
+                        <img src="assets/maps-icon.png" alt="Maps" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="https://api.whatsapp.com/send?phone=919633661344" target="_blank"><img src="assets/whatsapp-icon.png" alt="WhatsApp" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="bg-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-gray-900">About Us</h2>
+                <p class="mt-4 text-lg leading-6 text-gray-500">Learn more about our company and our team.</p>
+                <div class="mt-8 space-y-12">
+                    <div class="flex flex-col md:flex-row md:items-center md:space-x-6">
+                        <img class="h-56 w-full md:w-1/3 object-cover rounded-lg shadow-md" src="assets/team.jpg" alt="Our Team">
+                        <div class="mt-6 md:mt-0 md:w-2/3">
+                            <h3 class="text-2xl font-semibold text-gray-900">Who We Are</h3>
+                            <p class="mt-4 text-lg text-gray-500">Sukritham Properties is a leading construction and building company with a reputation for delivering high-quality projects. Our team of experienced professionals is dedicated to ensuring every project is completed to the highest standards.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center md:space-x-6">
+                        <img class="h-56 w-full md:w-1/3 object-cover rounded-lg shadow-md" src="assets/mission.jpg" alt="Our Mission">
+                        <div class="mt-6 md:mt-0 md:w-2/3">
+                            <h3 class="text-2xl font-semibold text-gray-900">Our Mission</h3>
+                            <p class="mt-4 text-lg text-gray-500">Our mission is to create sustainable, innovative, and high-quality buildings that meet the needs of our clients and contribute to the growth of our community. We strive to exceed expectations and deliver exceptional results on every project.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center md:space-x-6">
+                        <img class="h-56 w-full md:w-1/3 object-cover rounded-lg shadow-md" src="assets/vision.jpg" alt="Our Vision">
+                        <div class="mt-6 md:mt-0 md:w-2/3">
+                            <h3 class="text-2xl font-semibold text-gray-900">Our Vision</h3>
+                            <p class="mt-4 text-lg text-gray-500">Our vision is to be a leader in the construction industry, known for our innovative approach, commitment to quality, and dedication to customer satisfaction. We aim to build lasting relationships with our clients and partners based on trust, transparency, and mutual respect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between">
+                    <p>&copy; 2024 Sukritham Properties. All rights reserved.</p>
+                    <div class="space-x-4">
+                        <a href="https://www.facebook.com/sukritham.properties" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook" class="h-6"></a>
+                        <a href="mailto:sukrithamproperties@gmail.com" target="_blank"><img src="assets/email-icon.png" alt="Email" class="h-6"></a>
+                        <a href="https://www.google.com/maps/place/8°47'36.4&quot;N+76°45'42.9&quot;E/@8.7934542,76.7597208,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d8.7934542!4d76.7619095?hl=en" target="_blank"><img src="assets/maps-icon.png" alt="Maps" class="h-6"></a>
+                        <a href="https://api.whatsapp.com/send?phone=919633661344" target="_blank"><img src="assets/whatsapp-icon.png" alt="WhatsApp" class="h-6"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('hidden');
+        });
+
+        document.getElementById('close-button').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>

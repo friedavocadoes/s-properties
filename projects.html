@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Sukritham Properties</title>
+    <link rel="icon" href="assets/ico.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+        }
+        .popup-content {
+            background: white;
+            border-radius: 0.5rem;
+            max-width: 90%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+        }
+        .popup-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .popup-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            cursor: pointer;
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+/* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgb(214, 214, 214);
+            border-radius: 50px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgb(60, 60, 60);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-30 bg-gray-600 bg-opacity-40 backdrop-blur-md shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex">
+                    <a href="/">
+                        <div class="flex-shrink-0 flex items-center">
+                            <img class="h-16 mt-2 w-auto" src="assets/logo.png" alt="Company Logo">
+                        </div>
+                    </a>    
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="/" class="text-slate-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Home</a>
+                        <a href="/projects.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium">Projects</a>
+                        <a href="/about.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">About</a>
+                        <a href="/contact.html" class="text-gray-700 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 space-x-3 md:flex md:items-center">
+                    <a href="https://www.facebook.com/sukritham.properties" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="mailto:sukrithamproperties@gmail.com" target="_blank"><img src="assets/email-icon.png" alt="Email" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="https://www.google.com/maps/place/8°47'36.4&quot;N+76°45'42.9&quot;E/@8.7934542,76.7597208,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d8.7934542!4d76.7619095?hl=en" target="_blank">
+                        <img src="assets/maps-icon.png" alt="Maps" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                    <a href="https://api.whatsapp.com/send?phone=919633661344" target="_blank"><img src="assets/whatsapp-icon.png" alt="WhatsApp" class="rounded h-7 hover:scale-110 transition duration-100 ease-in-out"></a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sidebar" class="hidden fixed inset-0 flex z-40 md:hidden">
+
+        <div class="relative flex-1 flex flex-col max-w-full w-full bg-gray-800">
+            <div class="absolute top-7 right-9 pt-2">
+                <button id="close-button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:bg-gray-700">
+                    <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mx-auto pt-20">
+                <nav class="mt-5 px-2">
+                    <a href="/" class="group flex items-center my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                        Home
+                    </a>
+                    <a href="/projects.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                        Projects
+                    </a>
+                    <a href="/about.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                        About
+                    </a>
+                    <a href="/contact.html" class="group flex my-10 py-2 text-4xl leading-6 font-small text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
+                        Contact
+                    </a>
+                </nav>
+            </div>
+            <div class="space-x-7 m-auto flex mt-20">
+                <a href="https://www.facebook.com/sukritham.properties" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                <a href="mailto:sukrithamproperties@gmail.com" target="_blank"><img src="assets/email-icon.png" alt="Email" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                <a href="https://www.google.com/maps/place/8°47'36.4&quot;N+76°45'42.9&quot;E/@8.7934542,76.7597208,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d8.7934542!4d76.7619095?hl=en" target="_blank">
+                    <img src="assets/maps-icon.png" alt="Maps" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+                <a href="https://api.whatsapp.com/send?phone=919633661344" target="_blank"><img src="assets/whatsapp-icon.png" alt="WhatsApp" class="rounded h-10 hover:scale-110 transition duration-100 ease-in-out"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="bg-gray-300 py-28 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-center text-gray-900">Our Projects</h2>
+                <div class="mt-10 space-y-10">
+
+                    <!-- Comm Projects -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-7 -ml-5 text-gray-900">Commercial Projects</h3>    
+                        <h3 class="text-2xl font-semibold text-gray-900">Completed</h3>
+                        <div class="mt-6 grid grid-cols-1 gap-y-12 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+                            <!-- SP004 -->
+                            <div class="group relative cursor-pointer" data-project="ccompleted1">
+                                <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                                    <img src="assets/projects/comm/completed/1/main.jpg" alt="Completed Project 1" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="mt-4 text-lg font-medium text-gray-900">SP004</h4>
+                                <p class="mt-1 text-sm text-gray-500">Shop</p>
+                            </div>
+
+                            <!-- SP005 -->
+                            <div class="group relative cursor-pointer" data-project="ccompleted2">
+                                <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                                    <img src="assets/projects/comm/completed/2/main.jpg" alt="Completed Project 1" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="mt-4 text-lg font-medium text-gray-900">SP005</h4>
+                                <p class="mt-1 text-sm text-gray-500">Clinic</p>
+                            </div>
+                            
+                            
+                        <!-- Repeat for other completed projects -->
+                        </div>
+                    </div>
+
+                    <!-- Comm Ongoing Projects -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-900">Ongoing</h3>
+                        <div class="mt-6 grid grid-cols-1 gap-y-12 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+                            <!-- Project Item -->
+                            <!-- <div class="group relative cursor-pointer" data-project="congoing1">
+                                <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                                    <img src="assets/projects/comm/ongoing/1/main.JPG" alt="Ongoing Project 1" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="mt-4 text-lg font-medium text-gray-900">Ongoing Project 1</h4>
+                                <p class="mt-1 text-sm text-gray-500">Brief description of the ongoing project.</p>
+                            </div> -->
+                            <!-- Repeat for other ongoing projects -->
+                        </div>
+                    </div>
+
+                    <!-- Residential Projects -->
+                    <div>
+                        <h2 class="text-3xl font-bold mt-24 mb-7 -ml-5 text-gray-900">Residential Projects</h3>
+                        <h3 class="text-2xl font-semibold text-gray-900">Completed</h3>
+                        <div class="mt-6 grid grid-cols-1 gap-y-12 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+                            <!-- Project Item -->
+
+                            <!-- Ren SP001 -->
+                            <div class="group relative cursor-pointer" data-project="rcompleted1" data-project-v="rcompleted1v">
+                                <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                                    <img src="assets/projects/res/completed/2/main.jpg" alt="Ren SP001" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="mt-4 text-lg font-medium text-gray-900">Renovation SP001</h4>
+                                <p class="mt-1 text-sm text-gray-500">Brief description of the project.</p>
+                            </div>
+                            
+                            <!-- Ren SP002 -->
+                            <div class="group relative cursor-pointer" data-project="rcompleted2" data-project-v="rcompleted2v">
+                                <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                                    <img src="assets/projects/res/completed/1/main2.jpg" alt="Ren SP002" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="mt-4 text-lg font-medium text-gray-900">Renovation SP002</h4>
+                                <p class="mt-1 text-sm text-gray-500">Brief description of the project.</p>
+                            </div>
+
+                            <!-- Low Cost -->
+                            <div class="group relative cursor-pointer" data-project="rcompleted3" data-project-v="rcompleted3v">
+                                <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                                    <img src="assets/projects/res/completed/3/main.jpg" alt="Ren SP002" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="mt-4 text-lg font-medium text-gray-900">Low Cost SP003</h4>
+                                <p class="mt-1 text-sm text-gray-500">Brief description of the project.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resi Ongoing Projects -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-900">Ongoing</h3>
+                        <div class="mt-6 grid grid-cols-1 gap-y-12 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+                            <!-- Project Item -->
+                            <div class="group relative cursor-pointer" data-project="rongoing1">
+                                <div class="w-full h-72 bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+                                    <img src="assets/projects/res/ongoing/1/main.JPG" alt="Ongoing Project 1" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="mt-4 text-lg font-medium text-gray-900">Ongoing Project 1</h4>
+                                <p class="mt-1 text-sm text-gray-500">Brief description of the ongoing project.</p>
+                            </div>
+                            <!-- Repeat for other ongoing projects -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup -->
+    <div id="popup-overlay" class="popup-overlay backdrop-blur-sm">
+        <div id="popup-content" class="popup-content rounded-sm p-3 lg:p-6 py-8 bg-gradient-to-r from-purple-300 to-blue-300">
+            <button id="popup-close" class="popup-close">
+                <svg class="h-6 w-6 text-gray-700" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div id="popup-images" class="flex flex-wrap justify-center">
+                <!-- Popup images will be dynamically inserted here -->
+            </div>
+            <div id="popup-v" class="flex flex-wrap justify-center">
+                <!-- Popup videos will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 pb-3">
+        <div class="max-w-7xl mx-auto mt-3 px-4 sm:px-6 lg:px-1">
+            <div class="flex justify-between items-center">
+                <div class="text-gray-400">
+                    <p class="font-bold text-lg text-gray-200">SUKRITHAM PROPERTIES</p>
+                    <p class="font-semibold text-gray-300">DEVELOPERS & BUILDERS</p>
+                    <p>Kattadimukku, Chavarcode, Parippally</p>
+                    <p>EMAIL: sukrithamproperties@gmail.com</p>
+                    <p>PHONE: 9633661344</p>
+                </div>
+            </div>
+            <div class="mt-8">
+                <p class="text-center text-gray-400">&copy; 2024 Sukritham Properties. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Popup Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = {
+                ccompleted1: [
+                    'assets/projects/comm/completed/1/main.jgp',
+                    'assets/projects/comm/completed/1/1.jgp',
+                    // Add more images as needed
+                ],
+                congoing1: [
+                    'assets/projects/comm/ongoing/1/main.jgp',
+                    'assets/projects/comm/ongoing/1/1.jgp',
+                ],
+                rcompleted2: [
+                    'assets/projects/res/completed/1/1.jpg',
+                    'assets/projects/res/completed/1/2.jpg',
+                    'assets/projects/res/completed/1/main.jpg',
+                    'assets/projects/res/completed/1/4.jpg',
+                ],
+                rcompleted2v: [
+                    'assets/projects/res/completed/1/1.mp4'
+                ],
+                rcompleted1: [
+                    'assets/projects/res/completed/2/1.jpg',
+                    'assets/projects/res/completed/2/2.jpg',
+                    'assets/projects/res/completed/2/3.jpg',
+                ],
+                rcompleted3: [
+                    'assets/projects/res/completed/3/1.jpg',
+                    'assets/projects/res/completed/3/2.jpg',
+                    'assets/projects/res/completed/3/main.jpg',
+                ],
+                rongoing1: [
+                    'assets/projects/res/ongoing/1/main.JPG',
+                    'assets/projects/res/ongoing/1/1.JPG',
+                ],
+                ccompleted1: [
+                    'assets/projects/comm/completed/1/1.jpg',
+                    'assets/projects/comm/completed/1/2.jpg',
+                    'assets/projects/comm/completed/1/3.jpg',
+                    'assets/projects/comm/completed/1/4.jpg',
+                ],
+                ccompleted2: [
+                    'assets/projects/comm/completed/2/1.jpg',
+                    'assets/projects/comm/completed/2/2.jpg',
+                ]
+            };
+
+            document.querySelectorAll('.group').forEach(item => {
+                item.addEventListener('click', () => {
+                    const projectKey = item.getAttribute('data-project');
+                    const pkv = item.getAttribute('data-project-v') || '';
+                    const images = projects[projectKey] || [];
+                    const videos = projects[pkv] || [];
+                    const popupImages = document.getElementById('popup-images');
+                    const popupVids = document.getElementById('popup-v');
+                    popupImages.innerHTML = images.map(img => `<img src="${img}" alt="Project Image" class="my-5 mx-3 rounded-lg w-80" />`).join('');
+                    popupVids.innerHTML = videos.map(video => `<video class="my-5 mx-3 rounded-lg w-60" controls><source src="${video}" type="video/mp4">Your browser does not support the video tag.</video>`).join('');
+                    document.getElementById('popup-overlay').style.display = 'flex';
+                });
+            });
+
+            document.getElementById('popup-close').addEventListener('click', () => {
+                document.getElementById('popup-overlay').style.display = 'none';
+            });
+
+            document.getElementById('popup-overlay').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('popup-overlay')) {
+                    document.getElementById('popup-overlay').style.display = 'none';
+                }
+            });
+        });
+
+
+
+
+        // sidebar
+        window.addEventListener('load', ()=> {
+        console.log('hi');
+        document.getElementById('menu-button').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.remove('hidden');
+    });
+    document.getElementById('close-button').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.add('hidden');
+    });
+    })
+    </script>
+
+</body>
+</html>
